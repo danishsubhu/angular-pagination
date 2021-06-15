@@ -1,5 +1,11 @@
 <h3> NgX Pagination
 </h3>
+<br/>
+<div class="column is-one-third">
+  <label class="control">Filter items
+            <input type="text" class="input" placeholder="filter" [(ngModel)]="filter">
+        </label>
+</div>
 <table class="table table-bordered table-responsive-md table-striped text-left">
   <thead>
     <tr>
@@ -7,7 +13,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of tableRows  | paginate: {  itemsPerPage: 15, currentPage: p }">
+    <tr *ngFor="let item of tableRows  | stringFilter: filter | paginate: {itemsPerPage: 15, currentPage: p } ">
       <td *ngFor="let data of tableHeaders">
         {{item[data]}}
       </td>

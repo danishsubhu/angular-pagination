@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { PaginationInstance } from 'ngx-pagination';
 
 @Component({
   selector: 'static-pagination',
@@ -10,14 +11,19 @@ export class PaginationComponent {
   tableRows = [];
   total = null;
   p: number = 1;
+  public filter: string = '';
+
+  public config: PaginationInstance = {
+    itemsPerPage: 10,
+    currentPage: 1
+  };
   constructor() {}
 
   ngOnInit() {
-    this.tableHeaders = ['userID', 'userName'];
-    this.tableRows = [{ userID: '1', userName: 'name1' }];
+    this.tableHeaders = ['UserID', 'UserName'];
 
-    for (var i = 0; i < 100; i++) {
-      this.tableRows.push({ userID: i, userName: 'name' + i });
+    for (var i = 1; i < 100; i++) {
+      this.tableRows.push({ UserID: i, UserName: 'Name ' + i });
     }
   }
 }

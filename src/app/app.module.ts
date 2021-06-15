@@ -5,10 +5,16 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { StringFilterPipe } from './pipes/FilterPipe';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, NgxPaginationModule],
-  declarations: [AppComponent, HelloComponent, PaginationComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    StringFilterPipe,
+    PaginationComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
