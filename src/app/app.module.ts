@@ -5,7 +5,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { PaginationComponent } from './pagination/pagination.component';
-import { StringFilterPipe } from './pipes/FilterPipe';
+import { StringFilterPipe } from './pipes/string-filter.pipe';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, NgxPaginationModule],
